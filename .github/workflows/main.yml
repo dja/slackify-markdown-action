@@ -21,10 +21,12 @@ jobs:
         id: convert
         uses: ./
         with:
+          strip-comments: true
           text: |
             # Heading 1
 
             ## Heading 2
+            <!-- This is a comment -->
 
             [Link](http://example.com)
 
