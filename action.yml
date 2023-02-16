@@ -1,16 +1,19 @@
-name: 'Slack Markdown Converter'
-author: 'Joshua Coady'
+name: "Slack Markdown Converter"
+author: "Daniel Archer"
 description: "Converts markdown to Slack's mrkdwn"
 inputs:
   text:
-    description: 'Markdown text to convert'
+    description: "Markdown text to convert"
     required: true
+  strip-comments:
+    description: "Use Pandoc to strip HTML comments"
+    required: false
 outputs:
   text:
-    description: 'Converted Slack mrkdwn text'
+    description: "Converted Slack mrkdwn text"
 runs:
-  using: 'node12'
-  main: 'index.js'
+  using: "node16"
+  main: "index.js"
 branding:
-  icon: 'heart'
-  color: 'red'
+  icon: "heart"
+  color: "red"

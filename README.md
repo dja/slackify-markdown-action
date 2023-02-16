@@ -6,6 +6,7 @@ GitHub Action to convert markdown into Slack's mrkdwn. Basically just a wrapper 
 ### Inputs
 
 * `text` - The markdown text to convert.
+* `strip-comments` - (Optional) Removes HTML comments from Markdown. Defaults to false.
 
 ### Outputs
 

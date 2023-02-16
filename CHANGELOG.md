@@ -1,3 +1,10 @@
+# 1.0.1 (2023-02-15)
+
+
+### Features
+
+* Adds support for optional argument `strip-comments`, to use Pandoc for removing HTML comments from Markdown
+
 # 1.0.0 (2020-06-12)
 
 
