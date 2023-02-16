@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const slackifyMarkdown = require('slackify-markdown');
-const nodePandoc = require('node-pandoc');
+const pandoc = require('node-pandoc');
 
 try {
     const md = core.getInput('text', { required: true });
@@ -8,8 +8,12 @@ try {
 
     // If input has parameter for strip-comments, use pandoc to strip comments from markdown and return markdown
     if (core.getInput('strip-comments') === 'true') {
-        const pandoc = await nodePandoc(mrkdwn, '-f markdown -t markdown --atx-headers --wrap=none --strip-comments');
-        core.setOutput("text", pandoc);
+        const callback = function (err, result) {
+            if (err) console.error('Oh Nos: ', err);
+            core.setOutput("text", result);
+        };
+
+        pandoc(mrkdwn, '-f markdown -t markdown --atx-headers --wrap=none --strip-comments', callback);
     } else {
         core.setOutput("text", mrkdwn);
     }
