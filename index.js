@@ -8,8 +8,9 @@ try {
 
     // If input has parameter for strip-comments, use pandoc to strip comments from markdown and return markdown
     if (core.getInput('strip-comments') === 'true') {
-        const callback = function (err, result) {
-            if (err) console.error('Oh Nos: ', err);
+        const callback = (err, result) => {
+            if (err)
+                console.error('Oh Nos: ', err);
             core.setOutput("text", result);
         };
 
