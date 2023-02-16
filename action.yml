@@ -1,4 +1,4 @@
-name: "Slack Markdown Converter"
+name: "Slack Markdown Converter with Strip Comments"
 author: "Daniel Archer"
 description: "Converts markdown to Slack's mrkdwn"
 inputs:
